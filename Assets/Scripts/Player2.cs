@@ -4,8 +4,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 
 [RequireComponent(typeof(CharacterController))]
-public class PlayerMovementArrowKeys : MonoBehaviour
-{
+public class PlayerMovementArrowKeys : MonoBehaviour {
     public Camera playerCamera;
     public float walkSpeed = 6f;
     public float runSpeed = 12f;
@@ -26,8 +25,7 @@ public class PlayerMovementArrowKeys : MonoBehaviour
 
     private bool canMove = true;
 
-    void Start()
-    {
+    void Start() {
         characterController = GetComponent<CharacterController>();
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
@@ -36,8 +34,7 @@ public class PlayerMovementArrowKeys : MonoBehaviour
         def_run_speed = runSpeed;
     }
 
-    void Update()
-    {
+    void Update() {
         var keyboard = Keyboard.current;
 
         // Koristimo orijentaciju kamere za kretanje.
@@ -70,12 +67,10 @@ public class PlayerMovementArrowKeys : MonoBehaviour
         move.y = movementDirectionY;
         moveDirection = move;
 
-        if (isJumping && canMove && characterController.isGrounded)
-        {
+        if (isJumping && canMove && characterController.isGrounded) {
             moveDirection.y = jumpPower;
         }
-        else
-        {
+        else {
             moveDirection.y = movementDirectionY;
         }
 
@@ -84,21 +79,18 @@ public class PlayerMovementArrowKeys : MonoBehaviour
             moveDirection.y -= gravity * Time.deltaTime;
         }*/
 
-        if (characterController.isGrounded)
-        {
+        if (characterController.isGrounded) {
             moveDirection.y = 0f;
         }
 
 
 
-        if (isCrouching && canMove)
-        {
+        if (isCrouching && canMove) {
             characterController.height = crouchHeight;
             walkSpeed = crouchSpeed;
             runSpeed = crouchSpeed;
         }
-        else
-        {
+        else {
             characterController.height = defaultHeight;
             walkSpeed = def_walk_speed;
             runSpeed = def_run_speed;
@@ -106,8 +98,7 @@ public class PlayerMovementArrowKeys : MonoBehaviour
 
         characterController.Move(moveDirection * Time.deltaTime);
 
-        if (canMove)
-        {
+        if (canMove) {
             float lookHorizontal = 0f;
             float lookVertical = 0f;
 
