@@ -4,10 +4,15 @@ using UnityEngine;
 public class GameOver : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI text;
-    
+    [SerializeField] private TextMeshProUGUI timertext;
+    [SerializeField] private TextMeshProUGUI cointext;
+
     void Start()
     {
         GameManagerr.Instance.onStateChanged += GameManagerr_onStateChanged;
+        GameManagerr_onStateChanged(null, null);
+        timertext.gameObject.SetActive(false);
+        cointext.gameObject.SetActive(false);
     }
 
     private void GameManagerr_onStateChanged(object sender, System.EventArgs e)
@@ -15,6 +20,7 @@ public class GameOver : MonoBehaviour
         if (GameManagerr.Instance.isGameOver())
         {
             Show();
+            
         }
         else
         {
@@ -25,6 +31,8 @@ public class GameOver : MonoBehaviour
     private void Show()
     {
         gameObject.SetActive(true);
+        timertext.gameObject.SetActive(false);
+        cointext.gameObject.SetActive(false);
     }
     private void Hide()
     {

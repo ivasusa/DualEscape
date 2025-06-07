@@ -4,10 +4,14 @@ using UnityEngine;
 public class GameStartCountdown : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI text;
+    [SerializeField] private TextMeshProUGUI timertext;
+    [SerializeField] private TextMeshProUGUI cointext;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         GameManagerr.Instance.onStateChanged += GameManagerr_onStateChanged;
+        timertext.gameObject.SetActive(false);
+        cointext.gameObject.SetActive(false);
     }
 
     private void GameManagerr_onStateChanged(object sender, System.EventArgs e)
@@ -29,6 +33,8 @@ public class GameStartCountdown : MonoBehaviour
     private void Hide()
     {
         gameObject.SetActive(false);
+        timertext.gameObject.SetActive(true);
+        cointext.gameObject.SetActive(true);
     }
 
     private void Update()

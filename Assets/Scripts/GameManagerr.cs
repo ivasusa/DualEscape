@@ -1,4 +1,5 @@
 using System;
+using TMPro;
 using UnityEngine;
 
 public class GameManagerr : MonoBehaviour
@@ -19,8 +20,18 @@ public class GameManagerr : MonoBehaviour
     private State state;
     private float waitingToStartTimer = 1f;
     private float countdownToStartTimer = 3f;
-    private float gamePlayingTimer = 10f;
+    private float gamePlayingTimer = 30f;
     private bool isGamePaused = false;
+    [SerializeField] TextMeshProUGUI timerText;
+
+    public float gettime()
+    {
+        return gamePlayingTimer;
+    }
+    public void settime(float addTime)
+    {
+        gamePlayingTimer += addTime;
+    }
 
     private void Awake()
     {
@@ -61,7 +72,12 @@ public class GameManagerr : MonoBehaviour
                 break;
             case State.GamePlaying:
                 gamePlayingTimer -= Time.deltaTime;
-                if (gamePlayingTimer < 0f)
+                int minutes = Mathf.FloorToInt(gamePlayingTimer / 60);
+                int seconds = Mathf.FloorToInt(gamePlayingTimer % 60);
+                timerText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
+
+
+                if (gamePlayingTimer <= 0.1f)
                 {
                     state = State.GameOver;
                     onStateChanged?.Invoke(this, EventArgs.Empty);
@@ -108,3 +124,4 @@ public class GameManagerr : MonoBehaviour
         return state == State.GameOver;
     }
 }
+
