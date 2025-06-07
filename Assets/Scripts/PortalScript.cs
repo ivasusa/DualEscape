@@ -4,7 +4,11 @@ using UnityEngine;
 public class PortalScript : MonoBehaviour
 {
     private HashSet<GameObject> playersInPortal = new HashSet<GameObject>();
-
+    [SerializeField] private GameObject gameSuccessScreen;
+    private void Start()
+    {
+        gameSuccessScreen.SetActive(false);
+    }
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
@@ -13,7 +17,8 @@ public class PortalScript : MonoBehaviour
 
             if (playersInPortal.Count == 2)
             {
-                
+
+                gameSuccessScreen.SetActive(true);
                 // Ovde pozovi kraj igre ili neku scenu ili UI
             }
         }
