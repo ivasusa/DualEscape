@@ -6,11 +6,12 @@ TagManager:
   tags:
   - Floor
   - Coins
+  - Key
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Key
   - Water
   - UI
   - 

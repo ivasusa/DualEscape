@@ -7,8 +7,8 @@ public class PlayerMovement : MonoBehaviour
     public Camera playerCamera;             // reference to the camera (typically attached to "Head")
     public Transform headTransform;         // reference to the "Head" GameObject
 
-    public float walkSpeed = 6f;
-    public float runSpeed = 12f;
+    public float walkSpeed = 1f;
+    public float runSpeed = 2f;
     public float jumpPower = 7f;
     public float gravity = 0f;
 
@@ -17,7 +17,7 @@ public class PlayerMovement : MonoBehaviour
 
     public float defaultHeight = 2f;
     public float crouchHeight = 1f;
-    public float crouchSpeed = 3f;
+    public float crouchSpeed = 1f;
 
     private float defWalkSpeed, defRunSpeed;
     private Vector3 moveDirection = Vector3.zero;
