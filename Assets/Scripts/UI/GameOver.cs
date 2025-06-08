@@ -17,7 +17,7 @@ public class GameOver : MonoBehaviour
 
     private void GameManagerr_onStateChanged(object sender, System.EventArgs e)
     {
-        if (GameManagerr.Instance.isGameOver())
+        if (GameManagerr.Instance.isGameOver() && GlobalState.gameEnded == false)
         {
             Show();
             
