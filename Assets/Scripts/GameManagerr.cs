@@ -20,7 +20,7 @@ public class GameManagerr : MonoBehaviour
     private State state;
     private float waitingToStartTimer = 1f;
     private float countdownToStartTimer = 3f;
-    private float gamePlayingTimer = 30f;
+    private float gamePlayingTimer = 60f;
     private bool isGamePaused = false;
     [SerializeField] TextMeshProUGUI timerText;
 
