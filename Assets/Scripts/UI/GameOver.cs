@@ -9,9 +9,13 @@ public class GameOver : MonoBehaviour
     [SerializeField] private TextMeshProUGUI cointext;
     [SerializeField] private Button playAgainButton;
     [SerializeField] private Button quitButton;
+        private AudioMenager audioMenager;
+
 
     private void Awake()
-    {
+    {           
+        audioMenager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioMenager>();
+
         playAgainButton.onClick.AddListener(() =>
         {
             Loader.Load(Loader.Scene.MainMenuScene);
@@ -36,6 +40,7 @@ public class GameOver : MonoBehaviour
         if (GameManagerr.Instance.isGameOver() && GlobalState.gameEnded == false)
         {
             Show();
+            audioMenager.PlaySFX(audioMenager.gameOver);
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
 
