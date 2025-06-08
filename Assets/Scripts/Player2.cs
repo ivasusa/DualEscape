@@ -6,6 +6,7 @@ using UnityEngine.InputSystem;
 [RequireComponent(typeof(CharacterController))]
 public class PlayerMovementArrowKeys : MonoBehaviour {
     public Camera playerCamera;
+    public bool isTeleporting = false;
     public float walkSpeed = 1f;
     public float runSpeed = 2f;
     private float def_walk_speed, def_run_speed;
@@ -36,6 +37,8 @@ public class PlayerMovementArrowKeys : MonoBehaviour {
 
     void Update() {
         var keyboard = Keyboard.current;
+
+        if (isTeleporting) return;
 
         // Koristimo orijentaciju kamere za kretanje.
         // Uzimamo horizontalnu komponentu forward i right vektora kamere (bez uticaja y komponente)
