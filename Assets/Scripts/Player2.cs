@@ -6,8 +6,8 @@ using UnityEngine.InputSystem;
 [RequireComponent(typeof(CharacterController))]
 public class PlayerMovementArrowKeys : MonoBehaviour {
     public Camera playerCamera;
-    public float walkSpeed = 6f;
-    public float runSpeed = 12f;
+    public float walkSpeed = 1f;
+    public float runSpeed = 2f;
     private float def_walk_speed, def_run_speed;
 
     public float jumpPower = 7f;
@@ -16,7 +16,7 @@ public class PlayerMovementArrowKeys : MonoBehaviour {
     public float lookXLimit = 45f;
     public float defaultHeight = 2f;
     public float crouchHeight = 1f;
-    public float crouchSpeed = 3f;
+    public float crouchSpeed = 1f;
 
     private Vector3 moveDirection = Vector3.zero;
     private float rotationX = 0f;  // za pitch (vertikalnu rotaciju)
