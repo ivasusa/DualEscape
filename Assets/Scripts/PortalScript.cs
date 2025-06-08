@@ -5,11 +5,16 @@ public class PortalScript : MonoBehaviour
 {
     private HashSet<GameObject> playersInPortal = new HashSet<GameObject>();
     [SerializeField] private GameObject gameSuccessScreen;
+    private AudioMenager audioMenager;
 
    
     private void Start()
     {
         gameSuccessScreen.SetActive(false);
+    }
+     private void Awake()
+    {
+        audioMenager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioMenager>();
     }
 
     
@@ -23,6 +28,7 @@ public class PortalScript : MonoBehaviour
             {
 
                 gameSuccessScreen.SetActive(true);
+                audioMenager.PlaySFX(audioMenager.coin);
                 GlobalState.gameEnded = true;
                 Time.timeScale = 0f;
                 Cursor.lockState = CursorLockMode.None;
