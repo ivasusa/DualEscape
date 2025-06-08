@@ -676,7 +676,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 295, y: -50}
+  m_AnchoredPosition: {x: 295, y: 10}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &460903908
@@ -704,16 +704,16 @@ MonoBehaviour:
 
     Move: Arrow keys
 
-    
 
-    Look around: Numpad 4 / 6
-    / 8 / 2
 
-    
+    Look around: Numpad 4 / 6 / 8 /
+    2
+
+
 
     Teleport Player 1: L
 
-    
+
 
     Toggle light: P '
   m_isRightToLeft: 0
@@ -955,8 +955,8 @@ MonoBehaviour:
 
     MEET IN THE CENTER TO WIN.
 
-    GOOD LUCK
-    AND COMMUNICATE!
+    GOOD LUCK AND
+    COMMUNICATE!
 
 '
   m_isRightToLeft: 0
@@ -985,8 +985,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 50
-  m_fontSizeBase: 50
+  m_fontSize: 45
+  m_fontSizeBase: 45
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -2193,7 +2193,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -415, y: -13}
+  m_AnchoredPosition: {x: -415, y: 58}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1782168203
@@ -2223,16 +2223,16 @@ MonoBehaviour:
 
     Move: W A S D
 
-    
+
 
     Look around: Mouse
 
-    
+
 
     Teleport
     Player 2: G
 
-    
+
 
     Toggle light: T'
   m_isRightToLeft: 0

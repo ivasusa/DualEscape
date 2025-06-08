@@ -14,7 +14,7 @@ public class GameOver : MonoBehaviour
     {
         playAgainButton.onClick.AddListener(() =>
         {
-            Loader.Load(Loader.Scene.GameScene);
+            Loader.Load(Loader.Scene.MainMenuScene);
         });
         quitButton.onClick.AddListener(() =>
         {
@@ -51,6 +51,7 @@ public class GameOver : MonoBehaviour
         gameObject.SetActive(true);
         timertext.gameObject.SetActive(false);
         cointext.gameObject.SetActive(false);
+        Time.timeScale = 0f;
     }
     private void Hide()
     {

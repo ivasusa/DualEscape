@@ -1,11 +1,14 @@
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class GameStartCountdown : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI text;
     [SerializeField] private TextMeshProUGUI timertext;
     [SerializeField] private TextMeshProUGUI cointext;
+    
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -19,10 +22,13 @@ public class GameStartCountdown : MonoBehaviour
         if (GameManagerr.Instance.isCountdownToStartActive())
         {
             Show();
+            
+
         }
         else
         {
             Hide();
+            GlobalState.canMove = true;
         }
     }
 

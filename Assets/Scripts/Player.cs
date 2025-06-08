@@ -44,6 +44,9 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
+        if (!GlobalState.canMove) {
+            return;
+        }
         var keyboard = Keyboard.current;
         var mouse = Mouse.current;
 

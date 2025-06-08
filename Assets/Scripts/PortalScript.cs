@@ -27,6 +27,7 @@ public class PortalScript : MonoBehaviour
                 Time.timeScale = 0f;
                 Cursor.lockState = CursorLockMode.None;
                 Cursor.visible = true;
+                Time.timeScale = 0f;
                 // Ovde pozovi kraj igre ili neku scenu ili UI
             }
         }

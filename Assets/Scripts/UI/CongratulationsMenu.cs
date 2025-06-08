@@ -10,7 +10,7 @@ public class CongratulationsMenu : MonoBehaviour
     {
         playAgainButton.onClick.AddListener(() =>
         {
-            Loader.Load(Loader.Scene.GameScene);
+            Loader.Load(Loader.Scene.MainMenuScene);
         });
         quitButton.onClick.AddListener(() =>
         {

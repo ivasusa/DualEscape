@@ -36,6 +36,10 @@ public class PlayerMovementArrowKeys : MonoBehaviour {
     }
 
     void Update() {
+        if (!GlobalState.canMove)
+        {
+            return;
+        }
         var keyboard = Keyboard.current;
 
         if (isTeleporting) return;
