@@ -28,7 +28,7 @@ public class PortalScript : MonoBehaviour
             {
 
                 gameSuccessScreen.SetActive(true);
-                audioMenager.PlaySFX(audioMenager.coin);
+                audioMenager.PlaySFX(audioMenager.gameWin);
                 GlobalState.gameEnded = true;
                 Time.timeScale = 0f;
                 Cursor.lockState = CursorLockMode.None;
