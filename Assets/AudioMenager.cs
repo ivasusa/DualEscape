@@ -10,12 +10,18 @@ public class AudioMenager : MonoBehaviour
     public AudioClip background; 
     public AudioClip coin; 
     public AudioClip gameWin;
+    public AudioClip doors;
     public AudioClip gameOver;
 
    private void Start()
    {
     musicSource.clip=background;
     musicSource.Play();
+   }
+
+   public void PlaySFX(AudioClip clip)
+   {
+    SFXSource.PlayOneShot(clip);
    }
 
 }

@@ -6,6 +6,7 @@ public class PlayerMovement : MonoBehaviour
 {
     public Camera playerCamera;             // reference to the camera (typically attached to "Head")
     public Transform headTransform;         // reference to the "Head" GameObject
+    public bool isTeleporting = false;
 
     public float walkSpeed = 1f;
     public float runSpeed = 2f;
@@ -45,6 +46,8 @@ public class PlayerMovement : MonoBehaviour
     {
         var keyboard = Keyboard.current;
         var mouse = Mouse.current;
+
+        if (isTeleporting) return;
 
         // Umesto da se koristi transform igrača, koristimo orijentaciju kamere za kretanje.
         // Dobijamo horizontalnu komponentu kamere za napred/nazad.
