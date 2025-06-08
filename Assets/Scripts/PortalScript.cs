@@ -25,6 +25,8 @@ public class PortalScript : MonoBehaviour
                 gameSuccessScreen.SetActive(true);
                 GlobalState.gameEnded = true;
                 Time.timeScale = 0f;
+                Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = true;
                 // Ovde pozovi kraj igre ili neku scenu ili UI
             }
         }
